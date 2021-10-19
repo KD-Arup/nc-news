@@ -1,9 +1,13 @@
-import { useState, useEffect } from "react"
-import ArticlePreviewCard from './ArticlePreviewCard'
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
+import TopicButton from "./TopicButton";
+import FilterButton from "./FilterButton";
+import ArticlePreviewCard from './ArticlePreviewCard';
 
 import axios from "axios"
 
-function ArticleListDisplay() {
+function ArticleListDisplay(props) {
+    const { topics, setTopics } = props;
 
     const testArticles = { "articles": [
         {
@@ -48,8 +52,7 @@ function ArticleListDisplay() {
         }]
     }
 
-    const [articles, setArticles] = useState(testArticles.articles);
-    const [topics, setTopics] = useState({})
+    const [articles, setArticles] = useState(testArticles.articles); 
 
     useEffect(() => {
         axios.get('https://kd-nc-news.herokuapp.com/api/topics')
@@ -57,13 +60,14 @@ function ArticleListDisplay() {
             console.log(response);
             setTopics((currTopics) => {
                 const newTopics = [...response.data.topics];
+                return newTopics;
                 // return response.data.categories;
-                const topicsFilterObj = {}
-                newTopics.map((element) => {
-                    console.log(element);
-                    topicsFilterObj[element.slug] = true;
-                })
-                return topicsFilterObj;
+                // const topicsFilterObj = {};
+                // newTopics.map((element) => {
+                //     console.log(element);
+                //     topicsFilterObj[element.slug] = true;
+                // })
+                // return topicsFilterObj;
             });
         })
         .catch((error) => {
@@ -85,6 +89,21 @@ function ArticleListDisplay() {
     }, []);
 
     return (
+        <>
+        <section className="toolbar-container">
+            <div className="topic-buttons-container">
+            {topics.map((topic) => {
+                return (
+                    <Link to="/basket">
+                        <TopicButton name={topic.slug}/>
+                    </Link>
+                )
+            })}
+            </div>
+            <div className="filter-button-container">
+                <FilterButton/>
+            </div>
+        </section>
         <section className="article-list-display-container">
             <div className="article-list-container">
                 {articles.map((article) => {
@@ -97,6 +116,7 @@ function ArticleListDisplay() {
                 <button className="view-more-articles-button">{`View more >`}</button>
             </div>
         </section>
+        </>
     );
 }
 

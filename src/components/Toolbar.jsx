@@ -2,11 +2,11 @@ import { useState } from "react"
 import TopicButton from "./TopicButton";
 import FilterButton from "./FilterButton";
 
-function Toolbar() {
-
+function Toolbar(props) {
+    // const [topics, setTopics] = useState([]);
+    const {topics, setTopics } = props;
     const testTopics = {
         topics: [
-
             {
                 "slug": "coding",
                 "description": "Code is love, code is life"
@@ -39,14 +39,13 @@ function Toolbar() {
                 "slug": "football",
                 "description": "FOOTIE!"
             },
-            {
+            { 
                 "slug": "cooking",
                 "description": "Hey good looking, what you got cooking?"
             }
         ]
     }
 
-    const [topics, setTopics] = useState(testTopics.topics)
     return (
         <section className="toolbar-container">
             <div className="topic-buttons-container">
