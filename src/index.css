@@ -1,13 +1,122 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flexbox;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+h1{
+  font-family: 'Roboto', sans-serif;
+}
+
+.top-bar{
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.search-bar-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-column-start: 1;
+}
+
+.notification-bell-and-username-container{
+  grid-column-start: 2;
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.notification-bell{
+  display: grid;
+  grid-column-start: 1;
+}
+
+.username-and-login{
+  display: grid;
+  grid-column-start: 2;
+  grid-template-columns: auto auto;
+}
+
+.userName{
+  grid-column-start: 1;
+}
+
+.avatar-logo{
+  grid-column-start: 2;
+}
+
+.header-text-container{
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: #2268DC;
+  
+  
+}
+
+.header-text{
+  color:white;
+  background-color: #2268DC;
+  grid-column-start: 1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  align-self: center;
+  margin: auto;
+}
+
+.header-menu-button{
+  grid-column-start: 2;
+  height: fit-content;
+  width: fit-content;
+  background-color: #2268DC;
+  color: white;
+  align-self: center;
+  justify-self: right;
+  font-size:xx-large;
+  margin-right: 2px;
+}
+
+.toolbar-container{
+  display: flex;
+  flex-direction: row;
+}
+.topic-buttons-container{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin: 4px;
+}
+.toolbar-topic-button{
+  color: #2268DC;
+  background-color: #D3D3D3;
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 3px 10px;
+  margin-left: 5px;
+  margin-right: auto;
+  border: hidden;
+}
+
+.filter-button-container{
+  display: flex;
+  flex-direction: row;
+
+  border-left: solid;
+  border-bottom: solid;
+  border-color: #2268DC;
+  border-width: 2px;
+}
+
+.toolbar-filter-button{
+  color: #2268DC;
+  background-color: #D3D3D3;
+  font-size: 24px;
+  border-radius: 10px;
+  padding: 3px 10px;
+  margin-left: 5px;
+  margin: 4px 4px 4px 5px;
+  border: hidden;
 }
