@@ -1,5 +1,6 @@
 import Header from "./Header";
 import Toolbar from "./Toolbar";
+import ArticleListDisplay from "./ArticleListDisplay";
 
 import { useState } from "react";
 
@@ -10,7 +11,7 @@ function Home() {
         <div className="homepage-container">
             <Header />
             <Toolbar />
-            {/* <ArticleDisplay /> */}
+            <ArticleListDisplay />
             {/* <ProductDisplay products={products} setProducts={setProducts} categories={categories} setCategories={setCategories}/> */}
             
             <footer className="homepage-footer" >

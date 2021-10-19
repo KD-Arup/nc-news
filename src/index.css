@@ -4,10 +4,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flexbox;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  background-color: #EFF1F2;
 }
 
 h1{
   font-family: 'Roboto', sans-serif;
+}
+
+.homepage-header{
+  display: grid;
 }
 
 .top-bar{
@@ -15,6 +22,7 @@ h1{
   grid-template-columns: auto auto;
   padding-top: 5px;
   padding-bottom: 5px;
+  background-color: white;
 }
 
 .search-bar-container{
@@ -81,13 +89,14 @@ h1{
 .toolbar-container{
   display: flex;
   flex-direction: row;
+  background-color: white;
 }
 .topic-buttons-container{
   display: flex;
   flex-direction: row;
   overflow-x: auto;
   overflow-y: hidden;
-  margin: 4px;
+  margin: 6px 4px 0px 4px;
 }
 .toolbar-topic-button{
   color: #2268DC;
@@ -97,17 +106,17 @@ h1{
   padding: 3px 10px;
   margin-left: 5px;
   margin-right: auto;
+  margin-bottom: 12px;
   border: hidden;
 }
 
 .filter-button-container{
   display: flex;
   flex-direction: row;
-
   border-left: solid;
-  border-bottom: solid;
   border-color: #2268DC;
   border-width: 2px;
+  grid-row-start: 2;
 }
 
 .toolbar-filter-button{
@@ -119,4 +128,93 @@ h1{
   margin-left: 5px;
   margin: 4px 4px 4px 5px;
   border: hidden;
+}
+
+
+
+.article-list-display-container{
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.article-list-container{
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 8px 0px 0px 0px;
+}
+
+.article-preview-card{
+  height: auto;
+  width: auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto;
+  background-color: white;
+  margin: 0px 0px 8px 0px;
+  border: #D3D3D3;
+  border-width: 1px;
+  border-style: solid;
+  box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15);
+}
+
+.article-preview-card .article-heading{
+  font-size: 18px;
+  color: #2268DC;
+  grid-row-start: 1;
+}
+
+.article-preview-card .article-body{
+  font-size: 16px;
+  color: #6D6C6C;
+  grid-row-start: 2;
+}
+
+.article-preview-buttons-container{
+  display: grid;
+  font-size: 36;
+  grid-row-start: 3;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
+}
+
+.article-preview-buttons-container .votes-container{
+  font-size: 36;
+  grid-column-start: 1;
+}
+
+.article-preview-buttons-container .comments-container{
+  font-size: 36;
+  grid-column-start: 2;
+}
+
+.article-preview-buttons-container .bookmark-container{
+  font-size: 36;
+  grid-column-start: 3;
+}
+
+
+.view-more-articles-container{
+  grid-row-start: 2;
+  align-content: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+}
+
+.view-more-articles-container button{
+  align-self: center;
+  justify-self: center;
+  padding: auto;
+  margin: auto;
+  height: 48px;
+  width: 338px;
+  border-radius: 6px;
+  border: none;
+  background-color: #2268DC;
+  color: white;
+  font-size: 24px;
 }
