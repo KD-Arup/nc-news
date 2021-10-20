@@ -1,6 +1,7 @@
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route , useParams} from "react-router-dom";
 import Basket from "./components/Basket";
 import Home from "./components/Home";
+import SingleArticlePage from './components/SingleArticlePage';
 
 import './index.css';
 import Header from './components/Header';
@@ -15,6 +16,9 @@ function App() {
         </Route>
         <Route exact path="/basket">
           <Basket/>
+        </Route>
+        <Route exact path="/articles/:article_id">
+          <SingleArticlePage/>
         </Route>
         <Route >
           <p>404 - Page not found!</p>

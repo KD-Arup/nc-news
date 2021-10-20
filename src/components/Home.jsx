@@ -1,6 +1,6 @@
 import Header from "./Header";
-import Toolbar from "./Toolbar";
 import ArticleListDisplay from "./ArticleListDisplay";
+import SingleTopicPage from "./SingleArticlePage";
 
 import { useState } from "react";
 
@@ -15,10 +15,7 @@ function Home() {
     return (
         <div className="homepage-container">
             <Header />
-            {/* <Toolbar topics={topics} setTopics={setTopics} /> */}
             <ArticleListDisplay topics={topics} setTopics={setTopics} />
-            {/* <ProductDisplay products={products} setProducts={setProducts} categories={categories} setCategories={setCategories}/> */}
-            
             <footer className="homepage-footer" >
                 <div className='footer-links' ></div>
             </footer>

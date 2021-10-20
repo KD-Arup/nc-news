@@ -1,7 +1,12 @@
+import { useState } from "react";
+
 function TopicButton(props) {
-    const { name } = props;
+    const { slug } = props;
+
+    const [ topic, setTopic ] = useState(slug);
+
     return (
-        <button key={name} className="toolbar-topic-button">{name}</button>
+        <button key={`toolbar-topic-button-${slug}`} className="toolbar-topic-button">{slug}</button>
     );
 }
 
