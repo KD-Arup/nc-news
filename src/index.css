@@ -159,12 +159,15 @@ h1{
   border-width: 1px;
   border-style: solid;
   box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15);
+  text-decoration: none;
+
 }
 
 .article-preview-card .article-heading{
   font-size: 18px;
   color: #2268DC;
   grid-row-start: 1;
+  text-decoration:none !important;
 }
 
 .article-preview-card .article-body{

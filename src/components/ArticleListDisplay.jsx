@@ -10,6 +10,7 @@ function ArticleListDisplay(props) {
     const { topics, setTopics } = props;
 
     const [articles, setArticles] = useState([]); 
+    const [selectedTopic, setSelectedTopic] = useState([]);
 
     useEffect(() => {
         axios.get('https://kd-nc-news.herokuapp.com/api/topics')
@@ -52,9 +53,7 @@ function ArticleListDisplay(props) {
             {topics.map((topic) => {
                 return (
                     // <Link to="/basket">
-                    <Link to="/selected-topic">
-                        <TopicButton key={`${topic.slug}-topic-button`} slug={topic.slug}/>
-                    </Link>
+                        <TopicButton key={`${topic.slug}-topic-button`} slug={topic.slug} setSelectedTopic={setSelectedTopic}/>
                 )
             })}
             </div>
@@ -65,9 +64,16 @@ function ArticleListDisplay(props) {
         <section className="article-list-display-container" key="article-list-display-container">
             <div className="article-list-container" key="article-list-container">
                 {articles.map((article) => {
-                    return (
-                            <ArticlePreviewCard key={`comp-Preview_${article.title}_${article.article_id}`} article={article}/>
-                    )
+                    if(selectedTopic.length > 0){
+                        if(selectedTopic.includes(article.topic)){
+                            return (<ArticlePreviewCard key={`comp-Preview_${article.title}_${article.article_id}`} article={article}/>)
+                        }
+                    } else {
+                        return (<ArticlePreviewCard key={`comp-Preview_${article.title}_${article.article_id}`} article={article}/>)
+                    }
+                    // return (
+                    //         <ArticlePreviewCard key={`comp-Preview_${article.title}_${article.article_id}`} article={article}/>
+                    // )
                 })}
             </div>
             <div className="view-more-articles-container">

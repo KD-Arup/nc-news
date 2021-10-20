@@ -1,12 +1,21 @@
+import { buildQueries } from "@testing-library/react";
 import { useState } from "react";
 
 function TopicButton(props) {
-    const { slug } = props;
+    const { slug, setSelectedTopic } = props;
 
-    const [ topic, setTopic ] = useState(slug);
+    function handleClick(slug) {
+        setSelectedTopic((currTopic) => {
+          return [slug]
+        })
+      }
 
     return (
-        <button key={`toolbar-topic-button-${slug}`} className="toolbar-topic-button">{slug}</button>
+        <button 
+        key={`toolbar-topic-button-${slug}`} 
+        className="toolbar-topic-button"
+        onClick = {(e) => { handleClick(slug)}}
+        >{slug}</button>
     );
 }
 
