@@ -10,18 +10,22 @@ function ArticleCard(props) {
                         <p>{`NC News`}</p>
                         <p>{article.created_at}</p>
                     </div>
-                    <button>Bookmark this article</button>
+                    <div className="article-bookmark-button-container">
+                        <button className="article-bookmark-button">Bookmark this article</button>
+                    </div>
                 </div>
                 <div>
-                    <p>{article.body}</p>
+                    <p className="full-article-body">{article.body}</p>
                 </div>
             </div>
             <div className="article-vote-or-comment-container">
-                <button></button>
-                <button></button>
-            </div>
-            <div className="next-article-button-container">
-                <button className="next-article-button">Next article</button>
+                <div className="voting-buttons-container">
+                <button className="up-vote-button">up vote</button>
+                <button className="down-vote-button">down vote</button>
+                </div>
+                <div className="view-comments-button-container">
+                    <button className="view-comments-button" >comments</button>
+                </div>
             </div>
         </div>
     );

@@ -35,8 +35,8 @@ function SingleTopicPage(props) {
                 <div className="selected-article-card" key="selected-article-card">
                     <ArticleCard key={`comp-selected_${article.title}_${article.article_id}`} article={article}/>
                 </div>
-                <div className="view-more-articles-container">
-                    <button className="view-more-articles-button">{`View more >`}</button>
+                <div className="next-article-button-container">
+                    <button className="next-article-button">{`Next article >`}</button>
                 </div>
             </section>
         </div>
