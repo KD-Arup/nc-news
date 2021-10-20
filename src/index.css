@@ -273,7 +273,7 @@ h1{
 
 .full-article-body{
   text-align: justify;
-  margin: 10px 5px 20px;
+  margin: 10px 10px 20px 10px;
 }
 
 .article-vote-or-comment-container{
@@ -283,7 +283,7 @@ h1{
 
 .voting-buttons-container{
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   height: auto;
   width: auto;
   border-radius: 6px;
@@ -297,6 +297,7 @@ h1{
 }
 
 .up-vote-button{
+  grid-column-start: 1;
   align-self: center;
   justify-self: left;
   color: white;
@@ -306,7 +307,18 @@ h1{
   font-size: 14pt;
 }
 
+.votes-value{
+  align-self: center;
+  justify-self: center;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 10pt;
+
+}
+
 .down-vote-button{
+  grid-column-start: 3;
   align-self: center;
   justify-self: right;
   color: white;

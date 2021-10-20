@@ -21,7 +21,8 @@ function ArticleCard(props) {
             <div className="article-vote-or-comment-container">
                 <div className="voting-buttons-container">
                 <button className="up-vote-button">up vote</button>
-                <button className="down-vote-button">down vote</button>
+                <div className="votes-value">{`${article.votes} k`}</div>
+                <button className="down-vote-button">down</button>
                 </div>
                 <div className="view-comments-button-container">
                     <button className="view-comments-button" >comments</button>
