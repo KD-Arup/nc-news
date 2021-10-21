@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, setParams} from 'react-router-dom';
 
 import Header from "./Header";
-import TopicButton from "./TopicButton";
-import FilterButton from "./FilterButton";
 import ArticleCard from './ArticleCard';
 
 import axios from "axios"
 
-
-function SingleTopicPage(props) {
+function SingleArticlePage(props) {
     //const { article_id } = props;
 
     const [article, setArticle] = useState([]); 
@@ -26,21 +23,23 @@ function SingleTopicPage(props) {
         .catch((error) => {
             console.log(error);
         });
-    }, []);
+    }, [article_id]);
 
     return (
         <div className="single-article-page-container">
             <Header />
             <section className="article-view-container" key="article-view-container">
                 <div className="selected-article-card" key="selected-article-card">
-                    <ArticleCard key={`comp-selected_${article.title}_${article.article_id}`} article={article}/>
+                    <ArticleCard key={`comp-selected_${article.title}_${article.article_id}`} article={article} />
                 </div>
                 <div className="next-article-button-container">
-                    <button className="next-article-button">{`Next article >`}</button>
+                    <Link to={`/articles/${Number(article_id) + 1}`}>
+                        <button className="next-article-button">{`Next article >`}</button>
+                    </Link>
                 </div>
             </section>
         </div>
     );
 }
 
-export default SingleTopicPage;
+export default SingleArticlePage;

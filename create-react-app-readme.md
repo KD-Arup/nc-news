@@ -1,9 +1,6 @@
-# Getting Started with the NC News App
+# Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-THIS README FILE HAS NOT YET BEEN UPDATED!
-TEXT BELOW IS SIMPLY BOILERPLATE README TEXT FROM create-react-app
 
 ## Available Scripts
 

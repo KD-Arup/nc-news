@@ -1,6 +1,5 @@
 import Header from "./Header";
 import ArticleListDisplay from "./ArticleListDisplay";
-import SingleTopicPage from "./SingleArticlePage";
 
 import { useState } from "react";
 
