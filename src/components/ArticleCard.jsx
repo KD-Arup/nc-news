@@ -8,23 +8,27 @@ function ArticleCard(props) {
     const [ articleVotes, setArticleVotes ] = useState(article.votes);
     /// api/articles/:article_id
     //
+
     function handleVote(upOrDownVote) {
-        axios.patch(`https://kd-nc-news.herokuapp.com/api/articles/${article.article_id}`, { inc_votes: upOrDownVote })
-        .then((response) => {
-            setArticleVotes((curArticleVotes) => {
-                const optimisticVotes = curArticleVotes + upOrDownVote;
-                if(curArticleVotes < 0){
-                    return 0
-                } else {
-                    return optimisticVotes
-                }
-            });
-            const confirmedVotes = response.data.article.votes;
-            console.log(`new votes from server: ${confirmedVotes}`);
-        })
-        .catch((error) => {
-            console.log(error);
+        setArticleVotes((curArticleVotes) => {
+            const optimisticVotes = curArticleVotes + upOrDownVote;
+            if(optimisticVotes < 0){
+                return 0
+            } else {
+                return optimisticVotes
+            }
         });
+        if ((articleVotes + upOrDownVote) > -1) {
+            console.log(`about to contact server. Local articleVotes: ${articleVotes}`);
+            axios.patch(`https://kd-nc-news.herokuapp.com/api/articles/${article.article_id}`, { inc_votes: upOrDownVote })
+            .then((response) => {
+                const confirmedVotes = response.data.article.votes;
+                console.log(`new confirmed votes from server: ${confirmedVotes}`);
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+        }
     }
     return (
         <div>
