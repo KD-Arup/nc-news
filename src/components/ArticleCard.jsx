@@ -11,19 +11,12 @@ function ArticleCard(props) {
 
     function handleVote(upOrDownVote) {
         setArticleVotes((curArticleVotes) => {
-            const optimisticVotes = curArticleVotes + upOrDownVote;
-            if(optimisticVotes < 0){
-                return 0
-            } else {
-                return optimisticVotes
-            }
-        });
+            return (curArticleVotes + upOrDownVote) < 0 ? 0 : (curArticleVotes + upOrDownVote);
+            });
         if ((articleVotes + upOrDownVote) > -1) {
-            console.log(`about to contact server. Local articleVotes: ${articleVotes}`);
             axios.patch(`https://kd-nc-news.herokuapp.com/api/articles/${article.article_id}`, { inc_votes: upOrDownVote })
             .then((response) => {
-                const confirmedVotes = response.data.article.votes;
-                console.log(`new confirmed votes from server: ${confirmedVotes}`);
+                // const confirmedVotes = response.data.article.votes;
             })
             .catch((error) => {
                 console.log(error);
