@@ -98,8 +98,8 @@ You should implement the following functionality in your website. Check the lect
 1. ✅ view a list of all articles
 2. ✅ view a page for each topic with a list of related articles.
 3. ✅ view an individual article.
-4. view an individual article's comments.
-5. vote on an article and immediately see the change.
+4. ✅ view an individual article's comments.
+5. ✅ vote on an article and immediately see the change.
 6. post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
 7. sort articles by:
    - date created
