@@ -7,6 +7,7 @@ import Home from "./components/Home";
 import SingleArticlePage from './components/SingleArticlePage';
 import CommentListDisplay from "./components/CommentListDisplay";
 import Header from "./components/Header";
+import CommentAdder from './components/CommentAdder';
 
 function App() {
   return (
@@ -18,12 +19,16 @@ function App() {
         <Route exact path="/basket">
           <Basket/>
         </Route>
+        <Route exact path="/articles/:article_id">
+          <SingleArticlePage/>
+        </Route>
         <Route exact path="/articles/:article_id/comments">
           <Header />
           <CommentListDisplay />
         </Route>
-        <Route exact path="/articles/:article_id">
-          <SingleArticlePage/>
+        <Route exact path="/articles/:article_id/comments/add-comment">
+          <Header />
+          <CommentAdder />
         </Route>
         <Route >
           <p>404 - Page not found!</p>

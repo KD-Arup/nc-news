@@ -63,8 +63,13 @@ function CommentListDisplay(props) {
                     // }
                 })}
             </div>
-            <div className="view-more-articles-container">
-                <button className="view-more-articles-button">{`View more >`}</button>
+            <div className="view-more-comments-container">
+                <button className="view-more-comments-button">{`View more >`}</button>
+            </div>
+            <div className="add-comment-container">
+                <Link to={`/articles/${article_id}/comments/add-comment`}>
+                    <button className="add-comment-button">{`Add a comment`}</button>
+                </Link>
             </div>
         </section>
         </>
