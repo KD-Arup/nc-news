@@ -6,7 +6,7 @@ function CommentAdder(props) {
     const { article_id } = useParams();
 
     const defaultUser = {
-        username: "Joe-Blogs",
+        username: "jessjelly",
         avatarURL: "https://www.w3schools.com/w3images/avatar2.png",
         isSignedIn: true,
     }
@@ -18,11 +18,13 @@ function CommentAdder(props) {
     //
     const handleSubmit = (event) => {
         event.preventDefault();
-        axios.post(`https://kd-nc-news.herokuapp.com/api/articles/${article_id}/comments`, 
-        { 
+        const objToPost = { 
             "body": newComment,
             "username": user.username
-        })
+        };
+        console.log(objToPost);
+        console.log(article_id);
+        axios.post(`https://kd-nc-news.herokuapp.com/api/articles/${article_id}/comments`, objToPost)
         .then((response) => {
             console.log(response);
         })
