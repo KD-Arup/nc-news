@@ -11,6 +11,7 @@ function ArticleListDisplay(props) {
 
     const [articles, setArticles] = useState([]); 
     const [selectedTopic, setSelectedTopic] = useState([]);
+    const [ query, setQuery ] = useState('');
 
     useEffect(() => {
         axios.get('https://kd-nc-news.herokuapp.com/api/topics')
@@ -34,7 +35,7 @@ function ArticleListDisplay(props) {
     }, []);
 
     useEffect(() => {
-        axios.get('https://kd-nc-news.herokuapp.com/api/articles')
+        axios.get(`https://kd-nc-news.herokuapp.com/api/articles${query}`)
         .then((response) => {
             console.log(response);
             setArticles((curArticles) => {
@@ -44,7 +45,7 @@ function ArticleListDisplay(props) {
         .catch((error) => {
             console.log(error);
         });
-    }, []);
+    }, [query]);
 
     return (
         <>
@@ -58,7 +59,7 @@ function ArticleListDisplay(props) {
             })}
             </div>
             <div className="filter-button-container">
-                <FilterButton/>
+                <FilterButton setQuery={setQuery}/>
             </div>
         </section>
         <section className="article-list-display-container" key="article-list-display-container">
