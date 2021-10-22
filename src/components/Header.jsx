@@ -1,21 +1,29 @@
+import * as FaIcons from 'react-icons/fa';
+
+import Navbar from "./Navbar";
 function Header() {
     return (
         <header className="homepage-header">
             <div className="top-bar">
                 <div className="search-bar-container">
-                    <div>Search</div><div>mag-glass</div>
+                    <div>Search</div><div>
+                        <FaIcons.FaSearch />
+                    </div>
                 </div>
                 <div className="notification-bell-and-username-container" >
-                    <div className="notification-bell" >bell</div>
+                    <div className="notification-bell" >
+                        <FaIcons.FaBell />
+                    </div>
                     <div className="username-and-login">
                         <div className="userName" >Joe Blogs</div>
-                        <div className="avatar-logo">pic</div>
+                        <div className="avatar-logo">
+                            <FaIcons.FaUserCircle />
+                        </div>
                     </div>
                 </div>
             </div>
         <div className="header-text-container">
-            <h1 className="header-text" >NC News</h1>
-            <button className="header-menu-button">=</button>
+            <Navbar />
         </div>
         
     </header>

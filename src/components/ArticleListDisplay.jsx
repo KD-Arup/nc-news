@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import TopicButton from "./TopicButton";
 import FilterButton from "./FilterButton";
 import ArticlePreviewCard from './ArticlePreviewCard';
+import Navbar from "./Navbar";
 
 import axios from "axios"
 
