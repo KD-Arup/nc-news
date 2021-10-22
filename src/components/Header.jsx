@@ -1,7 +1,8 @@
 import * as FaIcons from 'react-icons/fa';
 
 import Navbar from "./Navbar";
-function Header() {
+function Header(props) {
+    const { query, setQuery } = props;
     return (
         <header className="homepage-header">
             <div className="top-bar">
@@ -23,7 +24,7 @@ function Header() {
                 </div>
             </div>
         <div className="header-text-container">
-            <Navbar />
+            <Navbar query={query} setQuery={setQuery}/>
         </div>
         
     </header>

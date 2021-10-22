@@ -101,7 +101,7 @@ You should implement the following functionality in your website. Check the lect
 4. ✅ view an individual article's comments.
 5. ✅ vote on an article and immediately see the change.
 6. ✅ post a new comment to an existing article (as a default logged in user. e.g. 'jessjelly').
-7. sort articles by:
+7. ✅ sort articles by:
    - date created
    - comment_count
    - votes

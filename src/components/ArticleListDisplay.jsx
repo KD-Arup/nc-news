@@ -9,10 +9,10 @@ import axios from "axios"
 
 function ArticleListDisplay(props) {
     const { topics, setTopics } = props;
+    const { query, setQuery } = props;
 
     const [articles, setArticles] = useState([]); 
     const [selectedTopic, setSelectedTopic] = useState([]);
-    const [ query, setQuery ] = useState('');
 
     useEffect(() => {
         axios.get('https://kd-nc-news.herokuapp.com/api/topics')
