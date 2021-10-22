@@ -10,6 +10,7 @@ import axios from "axios"
 function ArticleListDisplay(props) {
     const { topics, setTopics } = props;
     const { query, setQuery } = props;
+    const { order, setOrder } = props;
 
     const [articles, setArticles] = useState([]); 
     const [selectedTopic, setSelectedTopic] = useState([]);
@@ -36,7 +37,7 @@ function ArticleListDisplay(props) {
     }, []);
 
     useEffect(() => {
-        axios.get(`https://kd-nc-news.herokuapp.com/api/articles${query}`)
+        axios.get(`https://kd-nc-news.herokuapp.com/api/articles${query}&order=${order}`)
         .then((response) => {
             console.log(response);
             setArticles((curArticles) => {
@@ -46,7 +47,7 @@ function ArticleListDisplay(props) {
         .catch((error) => {
             console.log(error);
         });
-    }, [query]);
+    }, [query, order]);
 
     return (
         <>
@@ -60,7 +61,7 @@ function ArticleListDisplay(props) {
             })}
             </div>
             <div className="filter-button-container">
-                <FilterButton setQuery={setQuery}/>
+                <FilterButton setQuery={setQuery} setOrder={setOrder}/>
             </div>
         </section>
         <section className="article-list-display-container" key="article-list-display-container">
