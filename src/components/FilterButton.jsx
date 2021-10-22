@@ -2,14 +2,13 @@ import { useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-    faCoffee, 
     faCaretUp, 
-    faCaretDown,
-    faComments, 
-    faBookmark } from '@fortawesome/free-solid-svg-icons';
+    faSortAmountUpAlt,
+    faSortAmountUp,
+    faComments,} from '@fortawesome/free-solid-svg-icons';
 
 function FilterButton(props) {
-    const { setQuery, setOrder } = props;
+    const { setQuery, order, setOrder } = props;
     const [queryNumber, SetQueryNumber] = useState(0)
 
     const queryDictionary = {
@@ -42,15 +41,26 @@ function FilterButton(props) {
             }
         })
     }
-    return (
-        <button key="toolbar-filter-button" onClick={(e)=>{handleClick()}}>
-            <FontAwesomeIcon icon={faCaretUp}
-            key="toolbar-filter-button" 
-            className="toolbar-filter-button"
-            
-            />
-        </button>
-    );
+    //return (
+    {if (order === 'desc') {
+        return (
+            <button key="toolbar-filter-button" onClick={(e)=>{handleClick()}}>
+                <FontAwesomeIcon icon={faSortAmountUp}
+                key="toolbar-filter-button" 
+                className="toolbar-filter-button"
+                />
+            </button>
+        )
+    } else {
+        return (
+            <button key="toolbar-filter-button" onClick={(e)=>{handleClick()}}>
+                <FontAwesomeIcon icon={faSortAmountUpAlt}
+                key="toolbar-filter-button" 
+                className="toolbar-filter-button"
+                />
+            </button>
+        )
+    }}
 }
 
 export default FilterButton;

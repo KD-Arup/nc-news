@@ -61,7 +61,7 @@ function ArticleListDisplay(props) {
             })}
             </div>
             <div className="filter-button-container">
-                <FilterButton setQuery={setQuery} setOrder={setOrder}/>
+                <FilterButton setQuery={setQuery} order={order} setOrder={setOrder}/>
             </div>
         </section>
         <section className="article-list-display-container" key="article-list-display-container">
