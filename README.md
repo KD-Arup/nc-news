@@ -8,13 +8,9 @@ Users can browse a preview of all articles on the homepage with sorting and filt
 
 ## To visit the live version of this app
 
-The [live version](https://github.com/facebook/create-react-app) of the this app is hosted at the following URL: 
+The [live version](https://kd-nc-news.netlify.app) of the this app is hosted at the following URL: 
 
- [https://github.com/facebook/create-react-app](https://github.com/facebook/create-react-app).
-
-```javascript
-npm install
-```
+ [https://kd-nc-news.netlify.app](https://kd-nc-news.netlify.app).
 
 ## To install a dev version of this web app
 
