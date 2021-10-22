@@ -4,7 +4,12 @@ import { Link, useParams } from 'react-router-dom';
 // import * as IoIcons from 'react-icons/io';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faCaretUp, faCaretDown} from '@fortawesome/free-solid-svg-icons';
+import { 
+    faCoffee, 
+    faCaretUp, 
+    faCaretDown,
+    faComments, 
+    faBookmark } from '@fortawesome/free-solid-svg-icons';
 // import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro' // <-- import styles to be used
 
 
@@ -24,10 +29,15 @@ function ArticlePreviewCard(props) {
                     <div className="down-vote-icon"><FontAwesomeIcon icon={faCaretDown} /></div>
                 </div>
                 <div className="comments-container" key="comments-container" >
-                    {article.comment_count}
+                    <div className="comment-icon">
+                    <FontAwesomeIcon icon={faComments} />
+                    </div>
+                    <div className="comment-count">
+                        {article.comment_count}
+                    </div>
                 </div>
                 <div className="bookmark-container" key="bookmark-container" >
-                    {`bookmark`}
+                <FontAwesomeIcon icon={faBookmark} />
                 </div>
             </div>
         </div>

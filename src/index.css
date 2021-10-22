@@ -189,18 +189,24 @@ h1{
   grid-template-columns: auto auto auto;
   font-size: 36;
   grid-column-start: 1;
+  margin: auto;
+  justify-self: left;
+  align-content: center;
 }
 /* ------ */
 .article-preview-buttons-container .votes-container .up-vote-icon{
   font-size: 36;
   grid-column-start: 1;
   justify-self: center;
+  align-self:center;
+  align-content: center;
 }
 
 .article-preview-buttons-container .votes-container .votes-value{
   font-size: 36;
   grid-column-start: 2;
   justify-self: center;
+  padding: 0px 10px;
 }
 
 .article-preview-buttons-container .votes-container .down-vote-icon{
@@ -214,9 +220,29 @@ h1{
   font-size: 36;
   grid-column-start: 2;
   justify-self: center;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-.article-preview-buttons-container .bookmark-container .down-vote-icon{
+.article-preview-buttons-container .comments-container .comment-icon{
+  font-size: 36;
+  grid-column-start: 1;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+}
+
+.article-preview-buttons-container .comments-container .comment-count{
+  font-size: 36;
+  grid-column-start: 2;
+  justify-self: center;
+  display: grid;
+  padding: 10px 10px;
+  margin: auto;
+
+}
+
+.article-preview-buttons-container .bookmark-container {
   font-size: 36;
   grid-column-start: 3;
   justify-self: center;

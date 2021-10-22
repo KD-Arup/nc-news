@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <>
         <div className='navbar'>
-          <Link to='#' className='menu-bars' style={{ textDecoration: 'none' }}>
+          <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
           <h1 className="header-text" >NC News</h1>

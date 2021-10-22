@@ -15,7 +15,7 @@ function Header() {
                         <FaIcons.FaBell />
                     </div>
                     <div className="username-and-login">
-                        <div className="userName" >Joe Blogs</div>
+                        <div className="userName" >jessjelly</div>
                         <div className="avatar-logo">
                             <FaIcons.FaUserCircle />
                         </div>
